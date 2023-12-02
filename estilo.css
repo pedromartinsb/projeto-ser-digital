@@ -12,9 +12,16 @@ body {
   text-align: center;
   margin: 0;
 
-  background-image: 
-    radial-gradient(circle at left top, rgb(142 173 213 / .3), transparent 400px),
-    radial-gradient(circle at right center, rgb(142 173 213 / .3), transparent 400px);
+  background-image: radial-gradient(
+      circle at left top,
+      rgb(142 173 213 / 0.3),
+      transparent 400px
+    ),
+    radial-gradient(
+      circle at right center,
+      rgb(142 173 213 / 0.3),
+      transparent 400px
+    );
 }
 
 .content-wrapper-center {
@@ -114,6 +121,8 @@ img {
   background-color: var(--gray);
   border-radius: 5px;
   padding: 1rem;
+
+  container: testemunhoCard / inline-size;
 }
 
 .testemunho_thumb {
@@ -189,6 +198,21 @@ img {
   grid-column: 1 / span 12;
 }
 
+.testemunho_card {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@container testemunhoCard (min-width: 675px) {
+  .testemunho_card {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
 @media screen and (min-width: 46.25em) {
   body {
     text-align: left;
@@ -220,11 +244,6 @@ img {
 
   .header-menu a {
     padding: 1rem;
-  }
-
-  .testemunho {
-    display: flex;
-    gap: 1rem;
   }
 
   .contato_image {
@@ -268,12 +287,6 @@ img {
 @media screen and (min-width: 90em) {
   .hero_title {
     margin-bottom: 6.25rem;
-  }
-
-  .testemunho {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
   }
 
   .row {
